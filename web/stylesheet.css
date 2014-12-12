@@ -1,0 +1,12 @@
+.outer {
+	width:50%;
+	margin: 10px auto;
+	background-color: blue;
+}
+
+.inner {
+	width:80%;
+	padding: 15px;
+	background-color: red;
+
+}

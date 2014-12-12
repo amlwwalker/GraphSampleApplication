@@ -1,0 +1,63 @@
+<!-- # 2014 Walking Software -->
+<html>
+<head>
+	<title>
+		Awesome Graph Database
+	</title>
+</head>
+<body>
+<!-- CSS here: -->
+<style media="screen" type="text/css">
+
+.outer {
+	width:50%;
+	margin: auto;
+	padding: 10px 10px 10px 10px;
+	background-color: grey;
+	color: white;	
+}
+
+.inner {
+	width:80%;
+	margin: auto;
+	padding: 5px 5px 5px 5px;
+	background-color: darkgrey;
+	color: black;
+}
+pre {
+	background-color: white;
+	color: green;
+	font-weight: bold;
+	padding: 5px;
+}
+
+</style>
+
+	<div class="outer">
+		<h2>Welcome to our graph database</h2>
+		<h4>Database FAQ</h4>
+		<ul>
+			<li>The database is implemented in C and C++</li>
+			<li>The database uses the Mongoose open source web server in C</li>
+			<li>All queries are written in C++, directly into the application. This makes the queries themselves extremely fast, 	compared to quering another database</li>
+			<li>The database defaults to port 8000</li>
+			<li>It uses d3.js to render the graph</li>
+			<li>Custom DatabaseLoader class should be written to handle data, that is the only class that needs to be modified</li>
+			<li>The program requires the necessary properties of nodes and edges to be set to render the graph:</li></ul><b>Nodes:</b><pre>name: &lt;node name&gt;,<br/>group : &lt;integer&gt;</pre><b>Edges</b><pre>source: &lt;Node ID&gt;,<br/>target: &lt;Node ID&gt;,<br/>value: &lt;integer&gt;</pre>
+		
+	<div class="inner">
+
+		<h4>API instructions</h4>
+		<ul>
+			<li>See this screen: <pre>http://127.0.0.1:8000</pre></li>
+			<li>Display the forced directed graph: <pre>/graph e.g <a href="http://127.0.0.1:8000/graph" target="_blank">http://127.0.0.1:8000/graph</a></pre></li>
+			<li>Display graph json<pre>/showAll e.g <a href="http://127.0.0.1:8000/showAll" target="_blank">http://127.0.0.1:8000/showAll</a></pre>If the length parameter is passed then then number of nodes returned can be limited<pre>/showAll?length=10 e.g <a href="http://127.0.0.1:8000/showAll?length=10" target="_blank">http://127.0.0.1:8000/showAll?length=10</a></pre></li>
+			<li>Return all nodes: <pre>/showAllNodes e.g <a href="http://127.0.0.1:8000/showAllNodes" target="_blank">http://127.0.0.1:8000/showAllNodes</a></pre></li>
+			<li>Return all edges: <pre>/showAllEdges e.g <a href="http://127.0.0.1:8000/showAllEdges" target="_blank">http://127.0.0.1:8000/showAllEdges</a></pre></li>
+			<li>Return a node with an ID: <pre>/showNode?id=[ID] e.g <a href="http://127.0.0.1:8000/showNode?id=web" target="_blank">http://127.0.0.1:8000/showNode?id=web</a></pre></li>
+			<li>Return an edge with an ID: <pre>/showEdge?id=[ID] e.g <a href="http://127.0.0.1:8000/showEdge?id=12345" target="_blank">http://127.0.0.1:8000/showEdge?id=12345</a></pre></li>
+		<ul>
+	</div>
+	</div>
+</body>
+</html>
