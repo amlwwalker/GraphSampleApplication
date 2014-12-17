@@ -55,6 +55,7 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classgraph_d_b_1_1_base_edge-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">graphDB::BaseEdge Class Reference</div>  </div>
@@ -72,18 +73,21 @@ Inheritance diagram for graphDB::BaseEdge:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa6f887219843438e41d366033b5f4417"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6f887219843438e41d366033b5f4417"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setUpEdge</b> (std::string aId, <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *aFromNode, <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *aToNode)</td></tr>
-<tr class="separator:aa6f887219843438e41d366033b5f4417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e4e43c758e8fa65fae15d419c4b64d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5e4e43c758e8fa65fae15d419c4b64d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setUpEdge</b> (std::string aName, <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *aFromNode, <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *aToNode)</td></tr>
+<tr class="separator:aa5e4e43c758e8fa65fae15d419c4b64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a0bf66b3b6233ea4876547ad97ca642"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a0bf66b3b6233ea4876547ad97ca642"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEdge</b> ()</td></tr>
 <tr class="separator:a5a0bf66b3b6233ea4876547ad97ca642"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac22b4030ba93aa85e85ff494c81149bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac22b4030ba93aa85e85ff494c81149bb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setId</b> (std::string id)</td></tr>
-<tr class="separator:ac22b4030ba93aa85e85ff494c81149bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92fb575b9083f50b8f0cd783fe6f339d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92fb575b9083f50b8f0cd783fe6f339d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setName</b> (std::string name)</td></tr>
+<tr class="separator:a92fb575b9083f50b8f0cd783fe6f339d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc3a76399c5c7d57282f0e19016dd3be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc3a76399c5c7d57282f0e19016dd3be"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> ()</td></tr>
 <tr class="separator:adc3a76399c5c7d57282f0e19016dd3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974d0837ed550dc097f325314d18b19d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a974d0837ed550dc097f325314d18b19d"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()</td></tr>
+<tr class="separator:a974d0837ed550dc097f325314d18b19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad22ca1dba982ba93c43b4ba25c79b62b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad22ca1dba982ba93c43b4ba25c79b62b"></a>
 <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getFrom</b> ()</td></tr>
 <tr class="separator:ad22ca1dba982ba93c43b4ba25c79b62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +122,12 @@ std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign=
 <tr class="memitem:a83df0fce46647a977420994943e3c5d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83df0fce46647a977420994943e3c5d2"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getProperty</b> (std::string propertyName)</td></tr>
 <tr class="separator:a83df0fce46647a977420994943e3c5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a84fa98c32587cb2a6a90caa9f5ba634d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84fa98c32587cb2a6a90caa9f5ba634d"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>BaseGraph</b></td></tr>
+<tr class="separator:a84fa98c32587cb2a6a90caa9f5ba634d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/alex/c++/graphDB/graphLibrary/src/GraphObjects/<a class="el" href="_base_edge_8hpp_source.html">BaseEdge.hpp</a></li>
@@ -132,7 +142,7 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 17 2014 14:51:11 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 17 2014 15:13:11 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

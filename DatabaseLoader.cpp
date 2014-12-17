@@ -30,20 +30,20 @@ void DatabaseLoader::loadDatabase(){
 		assert(data[i].IsObject());	
 		
 		Node *tempNode;
-		tempNode = new(Node);
+		tempNode = (Node *) mGraph.addNode();
 		//The group is its index based on its position in the list
 		tempNode->setGroup(uniq);
 		
-		mGraph.addNode(tempNode);
+		
 		
 		std::ostringstream timeStampString;
 		timeStampString << std::setprecision(15) << data[i]["TimeStamp"].GetDouble();
 		
-		tempNode->setId(timeStampString.str());
+		tempNode->setName(timeStampString.str());
 
 		if (lastNode != NULL){
 				Edge* majorEdge;
-				majorEdge = new(Edge);
+				majorEdge = (Edge *)mGraph.addEdge();
 
 				majorEdge->setFrom(lastNode);
 				majorEdge->setTo(tempNode);
@@ -53,8 +53,9 @@ void DatabaseLoader::loadDatabase(){
 
 				majorEdge->setWeight(3);
 
-				majorEdge->setId(std::to_string(uniq));
-				mGraph.addEdge(majorEdge);
+				majorEdge->setName(std::to_string(uniq));
+
+				
 		}
 
 			for(rapidjson::Value::ConstMemberIterator it=data[i]["Odds"].MemberBegin(); it != data[i]["Odds"].MemberEnd(); it++) {
@@ -64,15 +65,16 @@ void DatabaseLoader::loadDatabase(){
 					tempNode->addProperty("children", it->name.GetString());
 
 					Node *tempBookieNode;
-					tempBookieNode = new(Node);
+					tempBookieNode = (Node *) mGraph.addNode();
 
 					tempBookieNode->setGroup(uniq);
-					mGraph.addNode(tempBookieNode);
+					
 
-					tempBookieNode->setId(it->name.GetString());
+					tempBookieNode->setName(it->name.GetString());
+
 					tempBookieNode->addProperty("parent", timeStampString.str());
 					Edge *tempBookieEdge;
-					tempBookieEdge = new(Edge);
+					tempBookieEdge = (Edge *) mGraph.addEdge();
 
 					tempBookieEdge->setTo(tempNode);
 					tempBookieEdge->setFrom(tempBookieNode);
@@ -80,9 +82,10 @@ void DatabaseLoader::loadDatabase(){
 					// tempNode->addEdge(tempBookieEdge);
 					// tempBookieNode->addEdge(tempBookieEdge);
 
-					tempBookieEdge->setId(std::to_string(uniq));
+					tempBookieEdge->setName(std::to_string(uniq));
+
 					tempBookieEdge->setWeight(3);
-					mGraph.addEdge(tempBookieEdge);
+					
 
 					for(rapidjson::Value::ConstMemberIterator innerIt=it->value.MemberBegin(); innerIt != it->value.MemberEnd(); innerIt++) {
 						
@@ -94,25 +97,26 @@ void DatabaseLoader::loadDatabase(){
 						tempBookieNode->addProperty("children", name);
 
 						Node *tempOddNode;
-						tempOddNode = new(Node);
+						tempOddNode = (Node *) mGraph.addNode();
 						tempOddNode->setGroup(uniq);
-						mGraph.addNode(tempOddNode);
 						
-						tempOddNode->setId(name);
+						
+						tempOddNode->setName(name);
+
 						tempOddNode->addProperty("parent", tempBookieNode->getId());
 						tempOddNode->addProperty("price", std::to_string(value));
 						Edge *tempOddEdge;
-						tempOddEdge = new(Edge);
+						tempOddEdge = (Edge *) mGraph.addEdge();
 						tempOddEdge->setTo(tempBookieNode);
 						tempOddEdge->setFrom(tempOddNode);
 
 						// tempBookieNode->addEdge(tempOddEdge);
 						// tempOddNode->addEdge(tempOddEdge);
 
-						tempOddEdge->setId(std::to_string(uniq)); //random name
+						tempOddEdge->setName(std::to_string(uniq)); //random name
 
 						tempOddEdge->setWeight(3);
-						mGraph.addEdge(tempOddEdge);	
+							
 					}	
 			}
 			lastNode = tempNode;
