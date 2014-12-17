@@ -27,8 +27,6 @@ void DatabaseLoader::loadDatabase(){
 		//The group is its index based on its position in the list
 		tempNode->setGroup(uniq);
 		
-		
-		
 		std::ostringstream timeStampString;
 		timeStampString << std::setprecision(15) << data[i]["TimeStamp"].GetDouble();
 		
@@ -36,7 +34,7 @@ void DatabaseLoader::loadDatabase(){
 
 		if (lastNode != NULL){
 				Edge* majorEdge;
-				majorEdge = (Edge *)mGraph.addEdge();
+				majorEdge = (Edge *) mGraph.addEdge();
 
 				majorEdge->setFrom(lastNode);
 				majorEdge->setTo(tempNode);

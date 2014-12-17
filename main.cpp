@@ -155,6 +155,7 @@ int main ( int argc, char *argv[] )
   // Edge *e;
   // e = new (Edge);
   // e->setWeight(3);
+
 	graph = new Graph();
 	  	//creating nodes and edges from a JSON file
 	db = new DatabaseLoader(argv[1], *graph);

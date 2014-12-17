@@ -5,6 +5,7 @@
 class Graph : public graphDB::BaseGraph {
 
 public:
+	// Node * addNode() { return (Node *) graphDB::BaseGraph::addNode();} //TODO TEST THIS!!
 private:
 };
 #endif
