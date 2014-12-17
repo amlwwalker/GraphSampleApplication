@@ -2,7 +2,7 @@
  
 #include "main.h"
 
-CustomGraph *graph;
+Graph *graph;
 DatabaseLoader *db;
 
 //WEB SERVER STUFF: WARNING VULNERABLE TO POTENTIAL ATTACK
@@ -35,7 +35,7 @@ static void showNode(struct mg_connection *conn) {
 	char nodeId[100];
 	mg_get_var(conn, "id", nodeId, sizeof(nodeId));
 	//crashes if the id doesnt exist (or isnt set)
-	graphDB::Node *n = graph->findNodeWithId(nodeId);
+	graphDB::BaseNode *n = graph->findNodeWithId(nodeId);
 	if (n == NULL){
 		mg_printf_data(conn, "Sorry no node found...");
 		return;
@@ -47,13 +47,13 @@ static void graphNeighbouringNodes(struct mg_connection *conn) {
   char nodeId[100];
   mg_get_var(conn, "id", nodeId, sizeof(nodeId));
   //crashes if the id doesnt exist (or isnt set)
-  graphDB::Node *n = graph->findNodeWithId(nodeId); //finds the first one?
+  graphDB::BaseNode *n = graph->findNodeWithId(nodeId); //finds the first one?
   if (n == NULL){
     mg_printf_data(conn, "Sorry no node found...");
     return;
   }
-  std::vector<graphDB::Node*> *nodes;
-  nodes = new (std::vector<graphDB::Node*>);
+  std::vector<graphDB::BaseNode*> *nodes;
+  nodes = new (std::vector<graphDB::BaseNode*>);
   graph->getNeighbouringNodes(n, *nodes);
   mg_printf_data(conn, graph->printEverything(*nodes, graph->getEdgesOnNode(n)).c_str());
   delete(nodes);
@@ -63,7 +63,7 @@ static void showEdge(struct mg_connection *conn) {
 	char edgeId[100];
 	mg_get_var(conn, "id", edgeId, sizeof(edgeId));
 	//crashes if the id doesnt exist (or isnt set)
-	graphDB::Edge *e = graph->findEdgeWithId(edgeId);
+	graphDB::BaseEdge *e = graph->findEdgeWithId(edgeId);
 	if (e == NULL){
 		mg_printf_data(conn, "Sorry no edge found...");
 		return;
@@ -152,10 +152,10 @@ int main ( int argc, char *argv[] )
 //The idea is to load all of the json in the mentioned file
 //and create a graph of the data
 //the output that to the browser
-  CustomEdge *e;
-  e = new (CustomEdge);
+  Edge *e;
+  e = new (Edge);
   e->setWeight(3);
-	graph = new CustomGraph();
+	graph = new Graph();
 	  	//creating nodes and edges from a JSON file
 	db = new DatabaseLoader(argv[1], *graph);
   std::cout << "graph size: " << graph->getNodes()->size() << std::endl;

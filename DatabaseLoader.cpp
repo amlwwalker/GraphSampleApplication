@@ -3,7 +3,7 @@
 #include "DatabaseLoader.hpp"
 #include <iomanip>      // std::setprecision
 
-DatabaseLoader::DatabaseLoader(std::string aFileName, CustomGraph &graph) 
+DatabaseLoader::DatabaseLoader(std::string aFileName, Graph &graph) 
 										: mFileName(aFileName), mGraph(graph) {
 	//constructor
 }
@@ -25,12 +25,12 @@ void DatabaseLoader::loadDatabase(){
 
 //for each object in the data array
 	int uniq = 0;
-	CustomNode *lastNode;
+	Node *lastNode;
 	for (rapidjson::SizeType i = 0; i < data.Size(); i++) {
 		assert(data[i].IsObject());	
 		
-		CustomNode *tempNode;
-		tempNode = new(CustomNode);
+		Node *tempNode;
+		tempNode = new(Node);
 		//The group is its index based on its position in the list
 		tempNode->setGroup(uniq);
 		
@@ -42,8 +42,8 @@ void DatabaseLoader::loadDatabase(){
 		tempNode->setId(timeStampString.str());
 
 		if (lastNode != NULL){
-				CustomEdge* majorEdge;
-				majorEdge = new(CustomEdge);
+				Edge* majorEdge;
+				majorEdge = new(Edge);
 
 				majorEdge->setFrom(lastNode);
 				majorEdge->setTo(tempNode);
@@ -63,16 +63,16 @@ void DatabaseLoader::loadDatabase(){
 					
 					tempNode->addProperty("children", it->name.GetString());
 
-					CustomNode *tempBookieNode;
-					tempBookieNode = new(CustomNode);
+					Node *tempBookieNode;
+					tempBookieNode = new(Node);
 
 					tempBookieNode->setGroup(uniq);
 					mGraph.addNode(tempBookieNode);
 
 					tempBookieNode->setId(it->name.GetString());
 					tempBookieNode->addProperty("parent", timeStampString.str());
-					CustomEdge *tempBookieEdge;
-					tempBookieEdge = new(CustomEdge);
+					Edge *tempBookieEdge;
+					tempBookieEdge = new(Edge);
 
 					tempBookieEdge->setTo(tempNode);
 					tempBookieEdge->setFrom(tempBookieNode);
@@ -93,16 +93,16 @@ void DatabaseLoader::loadDatabase(){
 						
 						tempBookieNode->addProperty("children", name);
 
-						CustomNode *tempOddNode;
-						tempOddNode = new(CustomNode);
+						Node *tempOddNode;
+						tempOddNode = new(Node);
 						tempOddNode->setGroup(uniq);
 						mGraph.addNode(tempOddNode);
 						
 						tempOddNode->setId(name);
 						tempOddNode->addProperty("parent", tempBookieNode->getId());
 						tempOddNode->addProperty("price", std::to_string(value));
-						CustomEdge *tempOddEdge;
-						tempOddEdge = new(CustomEdge);
+						Edge *tempOddEdge;
+						tempOddEdge = new(Edge);
 						tempOddEdge->setTo(tempBookieNode);
 						tempOddEdge->setFrom(tempOddNode);
 

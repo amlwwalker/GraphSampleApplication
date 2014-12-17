@@ -44,6 +44,7 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -59,60 +60,69 @@
 <div class="title">graphDB::Graph Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for graphDB::Graph:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classgraph_d_b_1_1_graph.png" usemap="#graphDB::Graph_map" alt=""/>
+  <map id="graphDB::Graph_map" name="graphDB::Graph_map">
+<area href="class_graph.html" alt="Graph" shape="rect" coords="0,56,103,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab3b069bb24aa9ef14c32f9e91499071"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab3b069bb24aa9ef14c32f9e91499071"></a>
-std::vector&lt; <a class="el" href="classgraph_d_b_1_1_node.html">Node</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getNodes</b> ()</td></tr>
-<tr class="separator:aab3b069bb24aa9ef14c32f9e91499071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b01b6e43704149b87f1002477e57538"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b01b6e43704149b87f1002477e57538"></a>
-std::vector&lt; <a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getEdges</b> ()</td></tr>
-<tr class="separator:a1b01b6e43704149b87f1002477e57538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1019e192c18bb7075f83bdee21c6b1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1019e192c18bb7075f83bdee21c6b1d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addNode</b> (<a class="el" href="classgraph_d_b_1_1_node.html">Node</a> *n)</td></tr>
-<tr class="separator:ad1019e192c18bb7075f83bdee21c6b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94378b0276ec3cd15255140d81058aa6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94378b0276ec3cd15255140d81058aa6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addEdge</b> (<a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> *e)</td></tr>
-<tr class="separator:a94378b0276ec3cd15255140d81058aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6b80e12dd128bb75804c6276e1d3415"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6b80e12dd128bb75804c6276e1d3415"></a>
-std::vector&lt; <a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getEdgesOnNode</b> (<a class="el" href="classgraph_d_b_1_1_node.html">Node</a> *n)</td></tr>
-<tr class="separator:aa6b80e12dd128bb75804c6276e1d3415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6a5f9c2ed80bad1142afcc1898ce81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e6a5f9c2ed80bad1142afcc1898ce81"></a>
+std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getNodes</b> ()</td></tr>
+<tr class="separator:a4e6a5f9c2ed80bad1142afcc1898ce81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11064ad0009fa327ba698a60b2a69842"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11064ad0009fa327ba698a60b2a69842"></a>
+std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getEdges</b> ()</td></tr>
+<tr class="separator:a11064ad0009fa327ba698a60b2a69842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2600b9504a5a0fdd8c1d018d870a5c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2600b9504a5a0fdd8c1d018d870a5c0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addNode</b> (<a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *n)</td></tr>
+<tr class="separator:af2600b9504a5a0fdd8c1d018d870a5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb05771f9981e0c910b5dabaebf5bf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cb05771f9981e0c910b5dabaebf5bf8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addEdge</b> (<a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> *e)</td></tr>
+<tr class="separator:a2cb05771f9981e0c910b5dabaebf5bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4152a3e13864ec192112ea81eb396b14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4152a3e13864ec192112ea81eb396b14"></a>
+std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getEdgesOnNode</b> (<a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *n)</td></tr>
+<tr class="separator:a4152a3e13864ec192112ea81eb396b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac83f6a4edf0d503d387f59093692d719"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac83f6a4edf0d503d387f59093692d719"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printNodes</b> ()</td></tr>
 <tr class="separator:ac83f6a4edf0d503d387f59093692d719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a53b4ccf99d9a31976b62b3ab1eea2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37a53b4ccf99d9a31976b62b3ab1eea2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printEdges</b> ()</td></tr>
 <tr class="separator:a37a53b4ccf99d9a31976b62b3ab1eea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a707b387be584de4e45146ee3587f365a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a707b387be584de4e45146ee3587f365a"></a>
-<a class="el" href="classgraph_d_b_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findNodeWithId</b> (std::string id)</td></tr>
-<tr class="separator:a707b387be584de4e45146ee3587f365a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad97903de3cf3782dcec6d36819720e9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad97903de3cf3782dcec6d36819720e9f"></a>
-<a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findEdgeWithId</b> (std::string id)</td></tr>
-<tr class="separator:ad97903de3cf3782dcec6d36819720e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c20e5e2eef1fbd1c172d0229773d80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1c20e5e2eef1fbd1c172d0229773d80"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printNodesToJson</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_node.html">Node</a> * &gt; nodes, int length=0)</td></tr>
-<tr class="separator:aa1c20e5e2eef1fbd1c172d0229773d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ef751a28a7c83c455229f65cf226d8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ef751a28a7c83c455229f65cf226d8a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printNodeToJson</b> (<a class="el" href="classgraph_d_b_1_1_node.html">Node</a> *n)</td></tr>
-<tr class="separator:a0ef751a28a7c83c455229f65cf226d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4856ced16663f2e5085c3a6eb15ca3f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4856ced16663f2e5085c3a6eb15ca3f0"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEdgesToJson</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> * &gt; edges, int length=0)</td></tr>
-<tr class="separator:a4856ced16663f2e5085c3a6eb15ca3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e2e8667ef43c78ae5d788fe63f49e2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e2e8667ef43c78ae5d788fe63f49e2e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEdgeToJson</b> (<a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> *n)</td></tr>
-<tr class="separator:a2e2e8667ef43c78ae5d788fe63f49e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa39c0d8ec1541ab675a25bfa182b55e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa39c0d8ec1541ab675a25bfa182b55e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEverything</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_node.html">Node</a> * &gt; nodes, std::vector&lt; <a class="el" href="classgraph_d_b_1_1_edge.html">Edge</a> * &gt; edges, int length=0)</td></tr>
-<tr class="separator:aaa39c0d8ec1541ab675a25bfa182b55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b6cabf93b602a2e23e7f2e0c6944a86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b6cabf93b602a2e23e7f2e0c6944a86"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>getNeighbouringNodes</b> (<a class="el" href="classgraph_d_b_1_1_node.html">Node</a> *n, std::vector&lt; <a class="el" href="classgraph_d_b_1_1_node.html">Node</a> * &gt; &amp;nodes)</td></tr>
-<tr class="separator:a2b6cabf93b602a2e23e7f2e0c6944a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077f620a5bfda9d4059a5a034dbc61bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a077f620a5bfda9d4059a5a034dbc61bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reorganise</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_node.html">Node</a> * &gt; nodes)</td></tr>
-<tr class="separator:a077f620a5bfda9d4059a5a034dbc61bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa52d9ee35866ed515ed6faede8d8ac7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa52d9ee35866ed515ed6faede8d8ac7"></a>
+<a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findNodeWithId</b> (std::string id)</td></tr>
+<tr class="separator:afa52d9ee35866ed515ed6faede8d8ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af869c21aeaa884eb21a2d55d4293ec7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af869c21aeaa884eb21a2d55d4293ec7c"></a>
+<a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findEdgeWithId</b> (std::string id)</td></tr>
+<tr class="separator:af869c21aeaa884eb21a2d55d4293ec7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35a5d33913bb83bb9f6428306dae1b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad35a5d33913bb83bb9f6428306dae1b3"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printNodesToJson</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> * &gt; nodes, int length=0)</td></tr>
+<tr class="separator:ad35a5d33913bb83bb9f6428306dae1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e99e52a7f7a13b172ecef97e4349a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40e99e52a7f7a13b172ecef97e4349a1"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printNodeToJson</b> (<a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *n)</td></tr>
+<tr class="separator:a40e99e52a7f7a13b172ecef97e4349a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01366a0417f56e161df12eccd18b0dac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01366a0417f56e161df12eccd18b0dac"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEdgesToJson</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> * &gt; edges, int length=0)</td></tr>
+<tr class="separator:a01366a0417f56e161df12eccd18b0dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04d8030a5a729a3a54f4ea04be3725b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae04d8030a5a729a3a54f4ea04be3725b"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEdgeToJson</b> (<a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> *n)</td></tr>
+<tr class="separator:ae04d8030a5a729a3a54f4ea04be3725b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519bae1165d611f003d9c33779746368"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a519bae1165d611f003d9c33779746368"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>printEverything</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> * &gt; nodes, std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> * &gt; edges, int length=0)</td></tr>
+<tr class="separator:a519bae1165d611f003d9c33779746368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7d74989edbc05cf80b6e234856150a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad7d74989edbc05cf80b6e234856150a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>getNeighbouringNodes</b> (<a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> *n, std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> * &gt; &amp;nodes)</td></tr>
+<tr class="separator:aad7d74989edbc05cf80b6e234856150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5919e0354e4db0d13feb1f2b43739261"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5919e0354e4db0d13feb1f2b43739261"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reorganise</b> (std::vector&lt; <a class="el" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> * &gt; nodes)</td></tr>
+<tr class="separator:a5919e0354e4db0d13feb1f2b43739261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/alex/c++/graphDB/graphLibrary/src/GraphObjects/<a class="el" href="_graph_8hpp_source.html">Graph.hpp</a></li>
+<li>/Users/alex/c++/graphDB/graphLibrary/src/GraphObjects/<a class="el" href="graph_library_2src_2_graph_objects_2_graph_8hpp_source.html">Graph.hpp</a></li>
 <li>/Users/alex/c++/graphDB/graphLibrary/src/GraphObjects/Graph.cpp</li>
 </ul>
 </div><!-- contents -->
@@ -124,7 +134,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reorganise</b> (std::
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 17 2014 10:46:52 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 17 2014 13:07:39 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -1,7 +1,7 @@
 // # 2014 Walking Software
 #include "DatabaseLoader.hpp"
-#include "CustomClasses/CustomEdge.hpp"
-#include "CustomClasses/CustomNode.hpp"
+#include "CustomClasses/Edge.hpp"
+#include "CustomClasses/Node.hpp"
 #include "../graphLibrary/src/common.hpp"
 
 #ifdef __cplusplus
