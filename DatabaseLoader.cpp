@@ -48,8 +48,8 @@ void DatabaseLoader::loadDatabase(){
 				majorEdge->setFrom(lastNode);
 				majorEdge->setTo(tempNode);
 
-				lastNode->addEdge(majorEdge);
-				tempNode->addEdge(majorEdge);
+				// lastNode->addEdge(majorEdge);
+				// tempNode->addEdge(majorEdge);
 
 				majorEdge->setWeight(3);
 
@@ -77,8 +77,8 @@ void DatabaseLoader::loadDatabase(){
 					tempBookieEdge->setTo(tempNode);
 					tempBookieEdge->setFrom(tempBookieNode);
 
-					tempNode->addEdge(tempBookieEdge);
-					tempBookieNode->addEdge(tempBookieEdge);
+					// tempNode->addEdge(tempBookieEdge);
+					// tempBookieNode->addEdge(tempBookieEdge);
 
 					tempBookieEdge->setId(std::to_string(uniq));
 					tempBookieEdge->setWeight(3);
@@ -106,8 +106,8 @@ void DatabaseLoader::loadDatabase(){
 						tempOddEdge->setTo(tempBookieNode);
 						tempOddEdge->setFrom(tempOddNode);
 
-						tempBookieNode->addEdge(tempOddEdge);
-						tempOddNode->addEdge(tempOddEdge);
+						// tempBookieNode->addEdge(tempOddEdge);
+						// tempOddNode->addEdge(tempOddEdge);
 
 						tempOddEdge->setId(std::to_string(uniq)); //random name
 
