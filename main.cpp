@@ -152,9 +152,9 @@ int main ( int argc, char *argv[] )
 //The idea is to load all of the json in the mentioned file
 //and create a graph of the data
 //the output that to the browser
-  Edge *e;
-  e = new (Edge);
-  e->setWeight(3);
+  // Edge *e;
+  // e = new (Edge);
+  // e->setWeight(3);
 	graph = new Graph();
 	  	//creating nodes and edges from a JSON file
 	db = new DatabaseLoader(argv[1], *graph);
