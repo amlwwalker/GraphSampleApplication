@@ -3,13 +3,6 @@
 #include "DatabaseLoader.hpp"
 #include <iomanip>      // std::setprecision
 
-DatabaseLoader::DatabaseLoader(std::string aFileName, Graph &graph) 
-										: mFileName(aFileName), mGraph(graph) {
-	//constructor
-}
-DatabaseLoader::~DatabaseLoader(){
-//destructor
-}
 void DatabaseLoader::loadDatabase(){
 	FILE * pFile = std::fopen (mFileName.c_str() , "r");
 	rapidjson::FileStream fs(pFile);
