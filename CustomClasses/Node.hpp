@@ -5,8 +5,6 @@
 class Node : public graphDB::BaseNode {
 
 public:
-	void printHello() { std::cout << "hello world" << std::endl; }
 private:
-	int i;
 };
 #endif

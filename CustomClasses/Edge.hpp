@@ -5,8 +5,6 @@
 class Edge : public graphDB::BaseEdge {
 
 public:
-	void printHello() { std::cout << "hello world" << std::endl; }
 private:
-	int i;
 };
 #endif

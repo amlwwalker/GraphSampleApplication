@@ -81,56 +81,70 @@
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">class </span>BaseEdge;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgraph_d_b_1_1_base_node.html">BaseNode</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgraph_d_b_1_1_base_graph.html">BaseGraph</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string getId(){ <span class="keywordflow">return</span> id;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> setName(std::string name){ this-&gt;name = name;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::string getName(){ <span class="keywordflow">return</span> name;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> addLabel(std::string labelName);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> addProperty(std::string propertyName, std::string propertyValue);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> addProperty(std::string propertyName, std::vector&lt;std::string&gt; propertyValue);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> setGroup(<span class="keywordtype">int</span> group) { this-&gt;group = group;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> getGroup() { <span class="keywordflow">return</span> group;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// void addOutgoingEdge(Edge *the_edge);</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// void addReceivingEdge(Edge *the_edge);</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// vector &lt;*Edge&gt; getOutgoingEdges();</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// vector &lt;*Edge&gt; getIncomingEdges();</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::vector &lt;BaseEdge*&gt; getAllEdges();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::vector &lt;BaseEdge*&gt; *getEdgesWithType(std::string type);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// map &lt;string, vector &lt;*Edge&gt; &gt; getOutgoingMap(){ return sentEdges_map; }</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// map &lt;string, vector &lt;*Edge&gt; &gt; getIncomingMap(){ return receivedEdges_map; }</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; getProperties();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::vector &lt;std::string&gt; getLabels();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::vector &lt;std::string&gt; getProperty(std::string PropertyName){ </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; tempProperties = getProperties();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            std::vector &lt;std::string&gt; <span class="keyword">property</span> = tempProperties[PropertyName];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> property;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::string printNode();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a84fa98c32587cb2a6a90caa9f5ba634d">   29</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgraph_d_b_1_1_base_graph.html">BaseGraph</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a85f6d8260d7e0ace92935e270c6d51da">   31</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a3e119f4198c57181b3d5e512fe1082b9">   35</a></span>&#160;        std::string <a class="code" href="classgraph_d_b_1_1_base_node.html#a3e119f4198c57181b3d5e512fe1082b9">getId</a>(){ <span class="keywordflow">return</span> id;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a06a58158c0438e4f524dad75fa06d8d6">   37</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#a06a58158c0438e4f524dad75fa06d8d6">setName</a>(std::string name){ this-&gt;name = name;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a0a7308d99387f329da9cce46fa5626c1">   39</a></span>&#160;        std::string <a class="code" href="classgraph_d_b_1_1_base_node.html#a0a7308d99387f329da9cce46fa5626c1">getName</a>(){ <span class="keywordflow">return</span> name;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#ac3e075c5a59baaa5c8d197c066fee6f5">addLabel</a>(std::string labelName);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#ac8a2fadd7f068d7eaa628b8bdc778d1b">addProperty</a>(std::string propertyName, std::string propertyValue);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#ac8a2fadd7f068d7eaa628b8bdc778d1b">addProperty</a>(std::string propertyName, std::vector&lt;std::string&gt; propertyValue);</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a90d3f6f1c62f279d1e069273fa63654f">   47</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#a90d3f6f1c62f279d1e069273fa63654f">setGroup</a>(<span class="keywordtype">int</span> group) { this-&gt;group = group;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a2df49b2d9452223f64c1b11c833cc900">   49</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classgraph_d_b_1_1_base_node.html#a2df49b2d9452223f64c1b11c833cc900">getGroup</a>() { <span class="keywordflow">return</span> group;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// void addOutgoingEdge(Edge *the_edge);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// void addReceivingEdge(Edge *the_edge);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// vector &lt;*Edge&gt; getOutgoingEdges();</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// vector &lt;*Edge&gt; getIncomingEdges();</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>        std::vector &lt;BaseEdge*&gt; <a class="code" href="classgraph_d_b_1_1_base_node.html#a7cbc433c52bd77bb473b718939d12b28">getAllEdges</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::vector &lt;BaseEdge*&gt; *<a class="code" href="classgraph_d_b_1_1_base_node.html#a515d807b69f9778ae6b5975a810ccc1a">getEdgesWithType</a>(std::string type);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classgraph_d_b_1_1_base_node.html">BaseNode</a>(std::string <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> addEdge (<a class="code" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> *edge){ edges.push_back(edge); }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::string id;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::string name;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> group;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::vector &lt;std::string&gt; labels;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; properties;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::vector &lt;BaseEdge*&gt; edges;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// map &lt;string, vector &lt;*Edge&gt; &gt; getOutgoingMap(){ return sentEdges_map; }</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// map &lt;string, vector &lt;*Edge&gt; &gt; getIncomingMap(){ return receivedEdges_map; }</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; <a class="code" href="classgraph_d_b_1_1_base_node.html#a82af75362a0603345cfcbfc038c9f5c8">getProperties</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::vector &lt;std::string&gt; <a class="code" href="classgraph_d_b_1_1_base_node.html#a6db51c51ac3935da8457102c551efc35">getLabels</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classgraph_d_b_1_1_base_node.html#a2b6471aee48f96af7b70387366f9a696">   68</a></span>&#160;        std::vector &lt;std::string&gt; <a class="code" href="classgraph_d_b_1_1_base_node.html#a2b6471aee48f96af7b70387366f9a696">getProperty</a>(std::string PropertyName){ </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; tempProperties = <a class="code" href="classgraph_d_b_1_1_base_node.html#a82af75362a0603345cfcbfc038c9f5c8">getProperties</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            std::vector &lt;std::string&gt; <span class="keyword">property</span> = tempProperties[PropertyName];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> property;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::string <a class="code" href="classgraph_d_b_1_1_base_node.html#a3c80dff5ce61be73d86b2cd559773e53">printNode</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classgraph_d_b_1_1_base_node.html">BaseNode</a>(std::string <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> addEdge (<a class="code" href="classgraph_d_b_1_1_base_edge.html">BaseEdge</a> *edge){ edges.push_back(edge); }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::string id;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::string name;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">int</span> group;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::vector &lt;std::string&gt; labels;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::map &lt;std::string, std::vector &lt;std::string&gt; &gt; properties;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::vector &lt;BaseEdge*&gt; edges;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_ac8a2fadd7f068d7eaa628b8bdc778d1b"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#ac8a2fadd7f068d7eaa628b8bdc778d1b">graphDB::BaseNode::addProperty</a></div><div class="ttdeci">void addProperty(std::string propertyName, std::string propertyValue)</div><div class="ttdoc">Adds a property to the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:15</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a3e119f4198c57181b3d5e512fe1082b9"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a3e119f4198c57181b3d5e512fe1082b9">graphDB::BaseNode::getId</a></div><div class="ttdeci">std::string getId()</div><div class="ttdoc">Returns the unique ID of the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:35</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a0a7308d99387f329da9cce46fa5626c1"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a0a7308d99387f329da9cce46fa5626c1">graphDB::BaseNode::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">returns the name of the Node </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:39</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a90d3f6f1c62f279d1e069273fa63654f"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a90d3f6f1c62f279d1e069273fa63654f">graphDB::BaseNode::setGroup</a></div><div class="ttdeci">void setGroup(int group)</div><div class="ttdoc">Sets the group of the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:47</div></div>
 <div class="ttc" id="classgraph_d_b_1_1_base_graph_html"><div class="ttname"><a href="classgraph_d_b_1_1_base_graph.html">graphDB::BaseGraph</a></div><div class="ttdef"><b>Definition:</b> BaseGraph.hpp:13</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a7cbc433c52bd77bb473b718939d12b28"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a7cbc433c52bd77bb473b718939d12b28">graphDB::BaseNode::getAllEdges</a></div><div class="ttdeci">std::vector&lt; BaseEdge * &gt; getAllEdges()</div><div class="ttdoc">Returns vector of edges attached to the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:35</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a6db51c51ac3935da8457102c551efc35"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a6db51c51ac3935da8457102c551efc35">graphDB::BaseNode::getLabels</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getLabels()</div><div class="ttdoc">Returns all the labels on the node. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:106</div></div>
 <div class="ttc" id="classgraph_d_b_1_1_base_edge_html"><div class="ttname"><a href="classgraph_d_b_1_1_base_edge.html">graphDB::BaseEdge</a></div><div class="ttdef"><b>Definition:</b> BaseEdge.hpp:14</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a3c80dff5ce61be73d86b2cd559773e53"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a3c80dff5ce61be73d86b2cd559773e53">graphDB::BaseNode::printNode</a></div><div class="ttdeci">std::string printNode()</div><div class="ttdoc">prints out the node, for debugging. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:110</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a2b6471aee48f96af7b70387366f9a696"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a2b6471aee48f96af7b70387366f9a696">graphDB::BaseNode::getProperty</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getProperty(std::string PropertyName)</div><div class="ttdoc">Returns a specific property array of a node. </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:68</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a2df49b2d9452223f64c1b11c833cc900"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a2df49b2d9452223f64c1b11c833cc900">graphDB::BaseNode::getGroup</a></div><div class="ttdeci">int getGroup()</div><div class="ttdoc">Returns the Group of the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:49</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a82af75362a0603345cfcbfc038c9f5c8"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a82af75362a0603345cfcbfc038c9f5c8">graphDB::BaseNode::getProperties</a></div><div class="ttdeci">std::map&lt; std::string, std::vector&lt; std::string &gt; &gt; getProperties()</div><div class="ttdoc">Returns all of the properties on the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:103</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a515d807b69f9778ae6b5975a810ccc1a"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a515d807b69f9778ae6b5975a810ccc1a">graphDB::BaseNode::getEdgesWithType</a></div><div class="ttdeci">std::vector&lt; BaseEdge * &gt; * getEdgesWithType(std::string type)</div><div class="ttdoc">Returns vector of edges with specific type. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:39</div></div>
 <div class="ttc" id="classgraph_d_b_1_1_base_node_html"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html">graphDB::BaseNode</a></div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:26</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_ac3e075c5a59baaa5c8d197c066fee6f5"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#ac3e075c5a59baaa5c8d197c066fee6f5">graphDB::BaseNode::addLabel</a></div><div class="ttdeci">void addLabel(std::string labelName)</div><div class="ttdoc">Adds a label to the Node. </div><div class="ttdef"><b>Definition:</b> BaseNode.cpp:10</div></div>
+<div class="ttc" id="classgraph_d_b_1_1_base_node_html_a06a58158c0438e4f524dad75fa06d8d6"><div class="ttname"><a href="classgraph_d_b_1_1_base_node.html#a06a58158c0438e4f524dad75fa06d8d6">graphDB::BaseNode::setName</a></div><div class="ttdeci">void setName(std::string name)</div><div class="ttdoc">Sets the name of the Node - optional. </div><div class="ttdef"><b>Definition:</b> BaseNode.hpp:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
@@ -140,7 +154,7 @@
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 17 2014 15:13:11 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 17 2014 15:44:04 for Test Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

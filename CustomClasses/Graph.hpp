@@ -5,8 +5,6 @@
 class Graph : public graphDB::BaseGraph {
 
 public:
-	void printHello() { std::cout << "hello world" << std::endl; }
 private:
-	int i;
 };
 #endif
