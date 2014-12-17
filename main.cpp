@@ -2,8 +2,8 @@
  
 #include "main.h"
 
-graphDB::Graph *graph;
-graphDB::DatabaseLoader *db;
+CustomGraph *graph;
+DatabaseLoader *db;
 
 //WEB SERVER STUFF: WARNING VULNERABLE TO POTENTIAL ATTACK
 //currently this may crash the program if an invalid parameter 
@@ -152,10 +152,12 @@ int main ( int argc, char *argv[] )
 //The idea is to load all of the json in the mentioned file
 //and create a graph of the data
 //the output that to the browser
-
-	graph = new graphDB::Graph();
+  CustomEdge *e;
+  e = new (CustomEdge);
+  e->setWeight(3);
+	graph = new CustomGraph();
 	  	//creating nodes and edges from a JSON file
-	db = new graphDB::DatabaseLoader(argv[1], *graph);
+	db = new DatabaseLoader(argv[1], *graph);
   std::cout << "graph size: " << graph->getNodes()->size() << std::endl;
 
 	db->loadDatabase();	

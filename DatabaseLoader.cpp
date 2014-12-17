@@ -3,9 +3,7 @@
 #include "DatabaseLoader.hpp"
 #include <iomanip>      // std::setprecision
 
-using namespace graphDB;
-
-DatabaseLoader::DatabaseLoader(std::string aFileName, Graph &graph) 
+DatabaseLoader::DatabaseLoader(std::string aFileName, CustomGraph &graph) 
 										: mFileName(aFileName), mGraph(graph) {
 	//constructor
 }
@@ -27,12 +25,12 @@ void DatabaseLoader::loadDatabase(){
 
 //for each object in the data array
 	int uniq = 0;
-	Node *lastNode;
+	CustomNode *lastNode;
 	for (rapidjson::SizeType i = 0; i < data.Size(); i++) {
 		assert(data[i].IsObject());	
 		
-		Node *tempNode;
-		tempNode = new(Node);
+		CustomNode *tempNode;
+		tempNode = new(CustomNode);
 		//The group is its index based on its position in the list
 		tempNode->setGroup(uniq);
 		
@@ -44,8 +42,8 @@ void DatabaseLoader::loadDatabase(){
 		tempNode->setId(timeStampString.str());
 
 		if (lastNode != NULL){
-				Edge* majorEdge;
-				majorEdge = new(Edge);
+				CustomEdge* majorEdge;
+				majorEdge = new(CustomEdge);
 
 				majorEdge->setFrom(lastNode);
 				majorEdge->setTo(tempNode);
@@ -65,16 +63,16 @@ void DatabaseLoader::loadDatabase(){
 					
 					tempNode->addProperty("children", it->name.GetString());
 
-					Node *tempBookieNode;
-					tempBookieNode = new(Node);
+					CustomNode *tempBookieNode;
+					tempBookieNode = new(CustomNode);
 
 					tempBookieNode->setGroup(uniq);
 					mGraph.addNode(tempBookieNode);
 
 					tempBookieNode->setId(it->name.GetString());
 					tempBookieNode->addProperty("parent", timeStampString.str());
-					Edge *tempBookieEdge;
-					tempBookieEdge = new(Edge);
+					CustomEdge *tempBookieEdge;
+					tempBookieEdge = new(CustomEdge);
 
 					tempBookieEdge->setTo(tempNode);
 					tempBookieEdge->setFrom(tempBookieNode);
@@ -95,16 +93,16 @@ void DatabaseLoader::loadDatabase(){
 						
 						tempBookieNode->addProperty("children", name);
 
-						Node *tempOddNode;
-						tempOddNode = new(Node);
+						CustomNode *tempOddNode;
+						tempOddNode = new(CustomNode);
 						tempOddNode->setGroup(uniq);
 						mGraph.addNode(tempOddNode);
 						
 						tempOddNode->setId(name);
 						tempOddNode->addProperty("parent", tempBookieNode->getId());
 						tempOddNode->addProperty("price", std::to_string(value));
-						Edge *tempOddEdge;
-						tempOddEdge = new(Edge);
+						CustomEdge *tempOddEdge;
+						tempOddEdge = new(CustomEdge);
 						tempOddEdge->setTo(tempBookieNode);
 						tempOddEdge->setFrom(tempOddNode);
 

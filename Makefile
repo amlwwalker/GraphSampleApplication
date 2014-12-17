@@ -12,7 +12,7 @@ CXXFLAGS = -std=c++11
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
 CSOURCES = $(call rwildcard,../webserver/,*.c)
-CXXSOURCES = $(call rwildcard,./,*.cpp) $(call rwildcard,../rapidjson/,*.cpp) $(call rwildcard,../graphLibrary/src/*/,*.cpp)
+CXXSOURCES = $(call rwildcard,./CustomClasses/,*.cpp) $(call rwildcard,./,*.cpp) $(call rwildcard,../rapidjson/,*.cpp) $(call rwildcard,../graphLibrary/src/*/,*.cpp)
 
 $(PROG): $(CSOURCES)
 	$(CC) -c $(CSOURCES) $(CFLAGS)
