@@ -7,10 +7,10 @@
 #include "CustomClasses/Node.hpp"
 #include "CustomClasses/Edge.hpp"
 
-class DatabaseLoader{
+class DatabaseLoader {
 
 	public:
-		DatabaseLoader(std::string filename, Graph &graph) : mFileName(filename), mGraph(graph){}
+		DatabaseLoader(std::string filename, Graph &graph) : mFileName(filename), mGraph(graph){} 
 		~DatabaseLoader(){}
 		void loadDatabase();
 	private:
